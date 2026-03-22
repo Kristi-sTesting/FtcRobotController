@@ -176,7 +176,3 @@ public class redbottom extends LinearOpMode {
         }
     }
 }
-
-
-
-
