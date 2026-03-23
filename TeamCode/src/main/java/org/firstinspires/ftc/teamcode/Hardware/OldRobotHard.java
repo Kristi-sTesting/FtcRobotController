@@ -12,7 +12,6 @@ public class OldRobotHard {
     DcMotor frontright;
     DcMotor backleft;
     DcMotor backright;
-    DcMotorEx flywheel;
     CRServo right_launch_servo;
     CRServo left_launch_servo;
 
@@ -21,6 +20,7 @@ public class OldRobotHard {
         frontright = hardwareMap.get(DcMotor.class, "frontright");
         backleft = hardwareMap.get(DcMotor.class, "backleft");
         backright = hardwareMap.get(DcMotor.class, "backright");
+        DcMotorEx flywheel = hardwareMap.get(DcMotorEx.class, "flywheel");
         flywheel = hardwareMap.get(DcMotorEx.class, "flywheel");
         flywheel.setMode(DcMotorEx.RunMode.RUN_USING_ENCODER);
         right_launch_servo = hardwareMap.get(CRServo.class, "rightServo");
@@ -30,5 +30,11 @@ public class OldRobotHard {
         frontright.setDirection(DcMotor.Direction.FORWARD);
         backleft.setDirection(DcMotor.Direction.REVERSE);
         backright.setDirection(DcMotor.Direction.FORWARD);
+
+        frontright.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        frontleft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        backright.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        backleft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        flywheel.setZeroPowerBehavior(DcMotorEx.ZeroPowerBehavior.BRAKE);
     }
 }
