@@ -17,8 +17,6 @@ public class bluebottom extends LinearOpMode {
     AutoRotate autoRotate = new AutoRotate(0,0);
     AutoShoot autoShoot = new AutoShoot();
     OldRobotHard oldRobotHard = new OldRobotHard();
-    double flywheelVel = 0;
-    double targetFlywheelVel = 1600;
 
     @Override
     public void runOpMode() throws InterruptedException {
